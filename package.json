@@ -1,61 +1,25 @@
 {
-  "name": "nodered-portable",
-  "productName": "nodered-portable",
-  "version": "1.1.1",
-  "description": "Node-RED: Portable Version",
-  "homepage": "http://nodered.org",
-  "main": "src/index.js",
+  "name": "electron-quick-start-typescript",
+  "version": "1.0.0",
+  "description": "A minimal Electron application written with Typescript",
   "scripts": {
-    "nodered": "node ./src/run-nodered.js",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint src --color"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "start": "npm run build && electron ./dist/main.js"
   },
-  "author": "Matthew Krieg",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mdkrieg/nodered-portable.git"
-  },
-  "config": {
-    "forge": {
-      "make_targets": {
-        "win32": [
-          "squirrel"
-        ]
-      },
-      "electronPackagerConfig": {
-        "packageManager": "npm",
-        "icon": "src/RED.ico"
-      },
-      "electronWinstallerConfig": {
-        "name": "nodered_portable"
-      },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
-      "windowsStoreConfig": {
-        "packageName": "",
-        "name": "noderedportable"
-      }
-    }
-  },
+  "author": "abeersaqib",
+  "license": "CC0-1.0",
   "dependencies": {
-    "electron-compile": "^6.4.4",
-    "electron-squirrel-startup": "^1.0.0",
-    "node-red": "^2.1.3"
+    "do-red": "^0.3.4",
+    "node-red": "^1.2.3",
+    "red-browser-control": "./custom/puppeteer"
   },
   "devDependencies": {
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "electron-forge": "^5.2.4",
-    "electron-prebuilt-compile": "8.2.0",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.26.1"
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "electron": "^22.2.0",
+    "eslint": "^7.32.0",
+    "typescript": "^4.8.3"
   }
 }

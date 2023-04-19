@@ -1,75 +1,53 @@
-# nodered-portable
-#### Node-RED Portable Version via Electron
+# electron-quick-start-typescript
 
-Node-RED source: https://github.com/node-red/node-red
+**Clone and run for a quick way to see Electron in action.**
 
-## Download
+This is a [TypeScript](https://www.typescriptlang.org) port of the [Electron Quick Start repo](https://github.com/electron/electron-quick-start) -- a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start) within the Electron documentation.
 
-### https://sourceforge.net/projects/nodered-portable
+**Use this app along with the [Electron API Demos](http://electron.atom.io/#get-started) app for API code examples to help you get started.**
 
-![nodered-portable](https://user-images.githubusercontent.com/66855036/140457489-48035e8e-ad47-43a8-b982-aa95c8ce4784.png)
+A basic Electron application needs just these files:
 
+- `package.json` - Points to the app's main file and lists its details and dependencies.
+- `main.ts` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
+- `index.html` - A web page to render. This is the app's **renderer process**.
 
-## Make
+You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start).
 
-#### Follow these instructions if you want to build from scratch
+## To Use
 
-First you will need to have Node and NPM installed, to confirm:
-```
-\\> node -v
-v14.17.6
-\\> npm -v
-6.14.15
-```
-(above were used for development, exact versions may not be critical)
+To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-To begin, clone the repository and open it.
-```
-git clone https://github.com/mdkrieg/nodered-portable.git
-cd nodered-portable
-```
-Then install dependencies using NPM.
-```
+```bash
+# Clone this repository
+git clone https://github.com/electron/electron-quick-start-typescript
+# Go into the repository
+cd electron-quick-start-typescript
+# Install dependencies
 npm install
-```
-Then, if that completes successfully run the make script.
-```
-npm run make
-```
-This will save the compiled program to the "./out" directory (creating if needed).
-
-If the above fails you may need to install windows build tools using ***Administrator Prompt***
-```
-npm install -g windows-build-tools
+# Run the app
+npm start
 ```
 
-#### For Mac OS or Linux
+Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
-Currently I have only needed this for Windows but to build for other targets, research Electron Forge (https://www.electronforge.io/), and look into the following configuration in the package.json:
-```
-"config": {
-  "forge": {
-    "make_targets": {
-      "win32": [
-        "squirrel"
-      ]
-    },
-  ...
-  }
+## Re-compile automatically
+
+To recompile automatically and to allow using [electron-reload](https://github.com/yan-foto/electron-reload), run this in a separate terminal:
+
+```bash
+npm run watch
 ```
 
-These are the "make_targets" listed in the default package.json:
-```
-"make_targets": {
-  "win32": [
-    "squirrel"
-  ],
-  "darwin": [
-    "zip"
-  ],
-  "linux": [
-    "deb",
-    "rpm"
-  ]
-},
-```
+## Resources for Learning Electron
+
+- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
+- [Electron Fiddle](https://electronjs.org/fiddle) - create, play, and share small Electron experiments
+- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
+- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
+- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
+- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+
+## License
+
+[CC0 1.0 (Public Domain)](LICENSE.md)

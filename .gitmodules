@@ -1,0 +1,3 @@
+[submodule "custom/puppeteer"]
+	path = custom/puppeteer
+	url = git@github.com:connectingmatrix/node-red-puppeteer.git
